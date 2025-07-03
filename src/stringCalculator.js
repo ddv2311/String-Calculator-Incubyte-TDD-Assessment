@@ -2,7 +2,7 @@ function add(numbers) {
     if (numbers === "") 
         return 0;
 
-   const parts = numbers.split(',');
+   const parts = numbers.split(/[\n,]/);
    return parts.map(Number).reduce((a,b)=>a+b,0);
 
     

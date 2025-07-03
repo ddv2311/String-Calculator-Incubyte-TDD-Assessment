@@ -26,6 +26,12 @@ describe('String Calculator', () => {
     expect(add("1,2,3,4,5,6,7,8,9,10")).toBe(55);
   });
 
+  test('Newline character as delimiter should work',()=>{
+    expect(add("1\n2,3")).toBe(6);
+    expect(add("1\n2\n3\n4\n5")).toBe(15);
+    expect(add("1\n2\n3\n4\n5\n6\n7\n8\n9\n10")).toBe(55);
+})
+
   
 
 });
