@@ -32,6 +32,10 @@ describe('String Calculator', () => {
     expect(add("1\n2\n3\n4\n5\n6\n7\n8\n9\n10")).toBe(55);
 })
 
+test('Custom delimiter should work',()=>{
+    expect(add("//;\n1;2")).toBe(3);
+});
+
   
 
 });

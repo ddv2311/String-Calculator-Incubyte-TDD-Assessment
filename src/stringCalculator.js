@@ -2,8 +2,19 @@ function add(numbers) {
     if (numbers === "") 
         return 0;
 
-   const parts = numbers.split(/[\n,]/);
-   return parts.map(Number).reduce((a,b)=>a+b,0);
+    let delimiter = /[\n,]/;
+
+    if(numbers.startsWith("//")){
+        const parts = numbers.split("\n");
+        const customDelimiter = parts[0].substring(2);
+        delimiter = new RegExp(customDelimiter);
+        numbers = parts[1];
+    
+    }
+    const parts = numbers.split(delimiter).map(Number);
+
+    return parts.reduce((a,b)=>a+b,0);
+
 
     
 
