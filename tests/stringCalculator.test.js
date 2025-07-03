@@ -38,7 +38,11 @@ test('Custom delimiter should work',()=>{
 
 test('Custom delimiter that is special character should be escaped',()=>{
     expect(add("//*\n1*2")).toBe(3);
-    
+
+});
+
+test('Negative numbers should throw an exception with message',()=>{
+    expect(()=>add("1,-2,3,-4")).toThrow("Negatives not allowed: -2,-4");
 })
 
   
