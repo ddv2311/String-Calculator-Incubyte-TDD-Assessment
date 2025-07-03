@@ -7,17 +7,15 @@ function add(numbers) {
     if(numbers.startsWith("//")){
 
         const parts = numbers.split('\n');
-        let delimiterLine = parts[0].slice(2); 
-
-         if (delimiterLine.startsWith('[')) {
-            const match = delimiterLine.match(/\[(.+?)\]/);
-            const customDelimiter = escapeSpecialChars(match[1]);
-            delimiter = new RegExp(customDelimiter);
-  } 
-        else {
-            delimiter = new RegExp(escapeSpecialChars(delimiterLine));
-  }
-
+        const delimiterLine = parts[0].slice(2); 
+      
+        if (delimiterLine.startsWith("[")) {
+          const delimiters = [...delimiterLine.matchAll(/\[(.+?)\]/g)].map(m => escapeSpecialChars(m[1]));
+          delimiter = new RegExp(delimiters.join('|')); 
+        } else {
+          delimiter = new RegExp(escapeSpecialChars(delimiterLine));
+        }
+      
         numbers = parts[1];
     
     }
