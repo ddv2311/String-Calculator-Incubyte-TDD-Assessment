@@ -6,7 +6,7 @@ function add(numbers) {
 
     if(numbers.startsWith("//")){
         const parts = numbers.split("\n");
-        const customDelimiter = parts[0].substring(2);
+        const customDelimiter = escapeSpecialChars(parts[0].substring(2));
         delimiter = new RegExp(customDelimiter);
         numbers = parts[1];
     
@@ -18,6 +18,10 @@ function add(numbers) {
 
     
 
+  }
+
+  function escapeSpecialChars(delimiter) {
+    return delimiter.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
   
   module.exports = add;

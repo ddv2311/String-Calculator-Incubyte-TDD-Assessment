@@ -36,6 +36,11 @@ test('Custom delimiter should work',()=>{
     expect(add("//;\n1;2")).toBe(3);
 });
 
+test('Custom delimiter that is special character should be escaped',()=>{
+    expect(add("//*\n1*2")).toBe(3);
+    
+})
+
   
 
 });
