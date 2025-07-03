@@ -43,6 +43,11 @@ test('Custom delimiter that is special character should be escaped',()=>{
 
 test('Negative numbers should throw an exception with message',()=>{
     expect(()=>add("1,-2,3,-4")).toThrow("Negatives not allowed: -2,-4");
+});
+
+test('Numbers greater than 1000 should be ignored',()=>{
+    expect(add("1001,2")).toBe(2);
+    expect(add("2,1000")).toBe(1002);
 })
 
   

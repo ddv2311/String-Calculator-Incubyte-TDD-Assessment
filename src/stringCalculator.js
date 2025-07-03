@@ -17,7 +17,7 @@ function add(numbers) {
     if(negatives.length > 0){
         throw new Error(`Negatives not allowed: ${negatives.join(',')}`);
     }
-    return parts.reduce((a,b)=>a+b,0);
+    return parts .filter(n => n <= 1000).reduce((a,b)=>a+b,0);
 
 
     
