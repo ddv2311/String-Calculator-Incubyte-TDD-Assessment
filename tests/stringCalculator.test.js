@@ -48,6 +48,12 @@ test('Negative numbers should throw an exception with message',()=>{
 test('Numbers greater than 1000 should be ignored',()=>{
     expect(add("1001,2")).toBe(2);
     expect(add("2,1000")).toBe(1002);
+});
+
+test('Given delimiter with any length should work',()=>{
+    expect(add("//[***]\n1***2***3")).toBe(6);
+    expect(add("//[abc]\n4abc5abc6")).toBe(15);
+    expect(add("//[***]\n1***2***3***4***5***6***7***8***9***10")).toBe(55);
 })
 
   

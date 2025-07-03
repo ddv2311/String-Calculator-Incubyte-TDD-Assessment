@@ -5,9 +5,19 @@ function add(numbers) {
     let delimiter = /[\n,]/;
 
     if(numbers.startsWith("//")){
-        const parts = numbers.split("\n");
-        const customDelimiter = escapeSpecialChars(parts[0].substring(2));
-        delimiter = new RegExp(customDelimiter);
+
+        const parts = numbers.split('\n');
+        let delimiterLine = parts[0].slice(2); 
+
+         if (delimiterLine.startsWith('[')) {
+            const match = delimiterLine.match(/\[(.+?)\]/);
+            const customDelimiter = escapeSpecialChars(match[1]);
+            delimiter = new RegExp(customDelimiter);
+  } 
+        else {
+            delimiter = new RegExp(escapeSpecialChars(delimiterLine));
+  }
+
         numbers = parts[1];
     
     }
