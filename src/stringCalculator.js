@@ -2,8 +2,10 @@ function add(numbers) {
     if (numbers === "") 
         return 0;
 
-    if (!numbers.includes(','))
-         return parseInt(numbers);
+   const parts = numbers.split(',');
+   return parts.map(Number).reduce((a,b)=>a+b,0);
+
+    
 
   }
   

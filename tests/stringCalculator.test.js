@@ -10,6 +10,13 @@ describe('String Calculator', () => {
     expect(add("42")).toBe(42);
     expect(add("999")).toBe(999);
   });
+  test('Two number string separated by comma should return the sum of the numbers', () => {
+    expect(add("1,2")).toBe(3);
+    expect(add("5,10")).toBe(15);
+    expect(add("42,1")).toBe(43);
+    expect(add("999,1")).toBe(1000);
+  });
+
   
 
 });
