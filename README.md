@@ -65,6 +65,26 @@ npm test
 
 ---
 
+## 💻 CLI Usage
+
+You can also use the calculator directly from your terminal:
+
+```bash
+node cli.js "1,2"
+node cli.js "1,2\n3"
+node cli.js "//[***]\n1***2***3"
+```
+
+> ℹ️ **Note:** On PowerShell, use a backtick (\`) for newline: `node cli.js "1,2\`n3"\`
+>
+> Use the following for help:
+
+```bash
+node cli.js --help
+```
+
+---
+
 ## 🧪 Sample Output
 
 ![All Tests Passing](screenshots/test-output.jpg)
@@ -124,4 +144,4 @@ This experience reinforced the importance of:
 ## 📌 Reference
 
 This implementation is inspired by Roy Osherove's original [String Calculator Kata](https://osherove.com/tdd-kata-1).
-Article reference: [An Introduction to TDD - freeCodeCamp](https://www.freecodecamp.org/news/an-introduction-to-test-driven-development-c4de6dce5c/) 
+Article reference: [An Introduction to TDD - freeCodeCamp](https://www.freecodecamp.org/news/an-introduction-to-test-driven-development-c4de6dce5c/)
