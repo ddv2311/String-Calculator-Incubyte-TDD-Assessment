@@ -68,6 +68,7 @@ npm test
 ## 🧪 Sample Output
 
 ![All Tests Passing](screenshots/test-output.jpg)
+![Test Coverage Summary](screenshots/coverage-summary.jpg)
 
 ---
 
